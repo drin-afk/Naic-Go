@@ -61,13 +61,17 @@ naicgo/
 
 ## Data integrity
 
-- All seed records are **fictional demonstration data**, flagged `is_demo = 1` / `verification_status = 'demo'` and shown with a **DEMO** badge. Replace them with researcher-verified data before evaluation.
-- Vehicle availability is **driver-reported**, timestamped and marked *outdated* after `AVAILABILITY_FRESH_MINUTES`. It is not GPS tracking.
+- All seed records are **fictional demonstration data**, flagged `is_demo = 1` / `verification_status = 'demo'`
+and shown with a **DEMO** badge. Replace them with researcher-verified data before evaluation.
+- Vehicle availability is **driver-reported**, timestamped and marked *outdated* after `AVAILABILITY_FRESH_MINUTES`.
+It is not GPS tracking.
+
 - Google road directions are labelled as distinct from researcher-documented public transport stop sequences.
 - Failed API calls show error states — the UI never substitutes placeholder data.
 
 ## Scope and limitations
 
-Limited to documented terminals and routes within Naic, Cavite for tricycles, jeepneys and buses. NaicGo does **not** provide real-time GPS tracking, 
-live traffic monitoring, guaranteed arrival times, automatic road-closure detection, guaranteed vehicle counts, 
+Limited to documented terminals and routes within Naic, Cavite for tricycles, jeepneys and buses. 
+NaicGo does **not** provide real-time GPS tracking, live traffic monitoring, guaranteed arrival times, 
+automatic road-closure detection, guaranteed vehicle counts, 
 or unverified routes outside the municipality.
