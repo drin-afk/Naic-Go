@@ -68,4 +68,6 @@ naicgo/
 
 ## Scope and limitations
 
-Limited to documented terminals and routes within Naic, Cavite for tricycles, jeepneys and buses. NaicGo does **not** provide real-time GPS tracking, live traffic monitoring, guaranteed arrival times, automatic road-closure detection, guaranteed vehicle counts, or unverified routes outside the municipality.
+Limited to documented terminals and routes within Naic, Cavite for tricycles, jeepneys and buses. NaicGo does **not** provide real-time GPS tracking, 
+live traffic monitoring, guaranteed arrival times, automatic road-closure detection, guaranteed vehicle counts, 
+or unverified routes outside the municipality.
