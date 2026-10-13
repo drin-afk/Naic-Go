@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-warm text-ink font-sans; }
+  h1, h2, h3, h4 { @apply font-bold tracking-tight text-ink; }
+  :focus-visible { @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-white; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .card { @apply rounded-2xl border border-black/5 bg-white shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-brand-700 active:bg-maroon; }
+  .btn-maroon { @apply btn bg-maroon text-white hover:bg-maroon-700; }
+  .btn-secondary { @apply btn border border-maroon/20 bg-white text-maroon hover:bg-maroon-50; }
+  .btn-ghost { @apply btn text-ink hover:bg-black/5; }
+  .btn-danger { @apply btn bg-accent text-white hover:bg-brand; }
+  .btn-sm { @apply px-3 py-1.5 text-xs rounded-lg; }
+  .input { @apply w-full rounded-xl border border-black/15 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/80 shadow-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 disabled:bg-black/5; }
+  .input-error { @apply border-accent focus:border-accent focus:ring-accent/20; }
+  .label { @apply mb-1.5 block text-sm font-semibold text-ink; }
+  .table-base { @apply min-w-full divide-y divide-black/5 text-sm; }
+  .table-base th { @apply whitespace-nowrap bg-warm px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted; }
+  .table-base td { @apply px-4 py-3 align-top; }
+  .link { @apply font-semibold text-brand underline-offset-4 hover:underline; }
+}
+
+.leaflet-container { font-family: inherit; z-index: 0; }
+.skeleton { background: linear-gradient(90deg, #f1eeec 25%, #e8e3e0 37%, #f1eeec 63%); background-size: 400% 100%; animation: skel 1.4s ease infinite; }
+@keyframes skel { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
