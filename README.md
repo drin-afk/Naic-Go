@@ -57,31 +57,6 @@ naicgo/
     └── testing-checklist.md
 ```
 
-## Quick start (Windows)
-
-See **[docs/setup-guide.md](docs/setup-guide.md)** for the full guide. Summary:
-
-```bat
-REM 1. Start MySQL in the XAMPP Control Panel, then import the schema (and optional demo data)
-cd C:\path\to\naicgo
-C:\xampp\mysql\bin\mysql.exe -u root < database\schema.sql
-C:\xampp\mysql\bin\mysql.exe -u root naicgo_db < database\seed.sql
-
-REM 2. Backend (edit JWT_SECRET in .env after copying)
-cd server
-copy .env.example .env
-npm install
-npm run create-admin
-npm run seed:demo-users
-npm run dev
-
-REM 3. Frontend (in a new terminal)
-cd client
-copy .env.example .env
-npm install
-npm run dev
-```
-
 ```
 
 ## Data integrity
