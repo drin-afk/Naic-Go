@@ -82,7 +82,6 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173 (API runs on http://localhost:5000).
 ```
 
 ## Data integrity
