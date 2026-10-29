@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.env.local
+server/storage/evidence/*
+!server/storage/evidence/.gitkeep
+*.log
+.DS_Store

@@ -1,4 +1,4 @@
-# Naic-Go
+# NaicGo
 
 **Development of a Web-Based Public Transportation Terminal Route Guide for Commuters in Naic, Cavite**
 
@@ -57,21 +57,41 @@ naicgo/
     └── testing-checklist.md
 ```
 
+## Quick start (Windows)
+
+See **[docs/setup-guide.md](docs/setup-guide.md)** for the full guide. Summary:
+
+```bat
+REM 1. Start MySQL in the XAMPP Control Panel, then import the schema (and optional demo data)
+cd C:\path\to\naicgo
+C:\xampp\mysql\bin\mysql.exe -u root < database\schema.sql
+C:\xampp\mysql\bin\mysql.exe -u root naicgo_db < database\seed.sql
+
+REM 2. Backend (edit JWT_SECRET in .env after copying)
+cd server
+copy .env.example .env
+npm install
+npm run create-admin
+npm run seed:demo-users
+npm run dev
+
+REM 3. Frontend (in a new terminal)
+cd client
+copy .env.example .env
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 (API runs on http://localhost:5000).
 ```
 
 ## Data integrity
 
-- All seed records are **fictional demonstration data**, flagged `is_demo = 1` / `verification_status = 'demo'`
-and shown with a **DEMO** badge. Replace them with researcher-verified data before evaluation.
-- Vehicle availability is **driver-reported**, timestamped and marked *outdated* after `AVAILABILITY_FRESH_MINUTES`.
-It is not GPS tracking.
-
+- All seed records are **fictional demonstration data**, flagged `is_demo = 1` / `verification_status = 'demo'` and shown with a **DEMO** badge. Replace them with researcher-verified data before evaluation.
+- Vehicle availability is **driver-reported**, timestamped and marked *outdated* after `AVAILABILITY_FRESH_MINUTES`. It is not GPS tracking.
 - Google road directions are labelled as distinct from researcher-documented public transport stop sequences.
 - Failed API calls show error states — the UI never substitutes placeholder data.
 
 ## Scope and limitations
 
-Limited to documented terminals and routes within Naic, Cavite for tricycles, jeepneys and buses. 
-NaicGo does **not** provide real-time GPS tracking, live traffic monitoring, guaranteed arrival times, 
-automatic road-closure detection, guaranteed vehicle counts, 
-or unverified routes outside the municipality.
+Limited to documented terminals and routes within Naic, Cavite for tricycles, jeepneys and buses. NaicGo does **not** provide real-time GPS tracking, live traffic monitoring, guaranteed arrival times, automatic road-closure detection, guaranteed vehicle counts, or unverified routes outside the municipality.
